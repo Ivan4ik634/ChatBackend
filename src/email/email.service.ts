@@ -4,9 +4,7 @@ import * as sgMail from '@sendgrid/mail';
 @Injectable()
 export class EmailService {
   constructor() {
-    sgMail.setApiKey(
-      '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',
-    );
+    sgMail.setApiKey(process.env.API_SENDGRID!);
   }
 
   async sendEmail(
