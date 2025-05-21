@@ -5,6 +5,7 @@ import * as sgMail from '@sendgrid/mail';
 export class EmailService {
   constructor() {
     sgMail.setApiKey(process.env.API_EMAIL || '');
+    console.log('log set api email:', process.env.API_EMAIL || 'пусто');
   }
 
   async sendEmail(

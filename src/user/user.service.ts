@@ -86,12 +86,15 @@ export class UserService {
       { secret: 'secretKAY', expiresIn: '90d' },
     );
     const textEmail: string = `Підтвердіть свої електронну пошту через це посилання:<a href='https://frontend-sand-eight-37.vercel.app/verify-email?token=${token}'>Посилання підтвердження!</a>  Якщо це не ви, то проігноруєте це повідомлення.`;
+    console.log(textEmail, 'Отправилось письмо !');
     await this.emailService.sendEmail(
       user.email,
       'Підтвердження електронної пошти',
       textEmail,
       textEmail,
     );
+    console.log('Окончательно отправилось письмо !');
+
     return res.json({ message: 'Email is sent' });
   }
   async EmailVerify(body: BodyEmailVerifyToken) {
