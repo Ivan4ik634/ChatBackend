@@ -13,6 +13,6 @@ async function bootstrap() {
   });
   app.useWebSocketAdapter(new SocketIoAdapter(app));
   console.log(`Server running ${process.env.PORT || 4200}`);
-  await app.listen(4200);
+  await app.listen(process.env.PORT || 4200);
 }
 bootstrap();
