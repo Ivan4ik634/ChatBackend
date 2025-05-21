@@ -6,9 +6,20 @@ import * as cors from 'cors';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(cookieParser()); // <-- обязательно
-  app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+  app.use(
+    cors({
+      origin: [
+        'http://localhost:3000',
+        'https://frontend-sand-eight-37.vercel.app',
+      ],
+      credentials: true,
+    }),
+  );
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: [
+      'http://localhost:3000',
+      'https://frontend-sand-eight-37.vercel.app',
+    ],
     credentials: true,
   });
   app.useWebSocketAdapter(new SocketIoAdapter(app));
