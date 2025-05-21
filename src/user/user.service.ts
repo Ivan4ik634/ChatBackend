@@ -46,7 +46,7 @@ export class UserService {
       { user: user },
       { secret: 'secretKAY', expiresIn: '90d' },
     );
-    const textEmail: string = `Підтвердіть свої електронну пошту через це посилання:<a href='http://localhost:3000/verify-email?token=${token}'>Посилання підтвердження!</a>  Якщо це не ви, то проігноруєте це повідомлення.`;
+    const textEmail: string = `Підтвердіть свої електронну пошту через це посилання:<a href='https://frontend-sand-eight-37.vercel.app/verify-email?token=${token}'>Посилання підтвердження!</a>  Якщо це не ви, то проігноруєте це повідомлення.`;
 
     await this.emailService.sendEmail(
       user.email,
@@ -85,7 +85,7 @@ export class UserService {
       { user: user },
       { secret: 'secretKAY', expiresIn: '90d' },
     );
-    const textEmail: string = `Підтвердіть свої електронну пошту через це посилання:<a href='http://localhost:3000/verify-email?token=${token}'>Посилання підтвердження!</a>  Якщо це не ви, то проігноруєте це повідомлення.`;
+    const textEmail: string = `Підтвердіть свої електронну пошту через це посилання:<a href='https://frontend-sand-eight-37.vercel.app/verify-email?token=${token}'>Посилання підтвердження!</a>  Якщо це не ви, то проігноруєте це повідомлення.`;
     await this.emailService.sendEmail(
       user.email,
       'Підтвердження електронної пошти',
@@ -198,7 +198,7 @@ export class UserService {
       { secret: 'secretKAY' },
     );
     const textEmail: string = `Підтвердіть свої електронну пошту через це посилання:
-    <a href='http://localhost:3000/verify-email?token=${token}'>Посилання підтвердження!</a> 
+    <a href='https://frontend-sand-eight-37.vercel.app/verify-email?token=${token}'>Посилання підтвердження!</a> 
     Якщо це не ви, то проігноруєте це повідомлення.`;
     await this.emailService.sendEmail(
       user.email,
